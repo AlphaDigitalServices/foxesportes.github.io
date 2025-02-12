@@ -1070,14 +1070,14 @@ body {
     }
   }
   .cid-tqJ3oCafDp .navbar-brand {
-    margin: auto !important;
+    margin: auto;
     position: absolute;
-    width: 200px;
+    width: 117px;
     flex-direction: column;
-    top: -5px;
-    left: 50%;
-    right: 50%;
-    transform: translateX(-50%);
+    top: 0;
+    left: 0;
+    right: 94%;
+    transform: translateX(0%);
     min-height: 70px;
     flex-shrink: 0;
     align-items: center;
