@@ -1074,7 +1074,7 @@ body {
     position: absolute;
     width: 117px;
     flex-direction: column;
-    top: 0;
+    top: -22px;
     left: 0;
     right: 94%;
     transform: translateX(0%);
