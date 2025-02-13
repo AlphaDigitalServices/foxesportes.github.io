@@ -6,7 +6,7 @@ body {
   color: #fff;
 }
 
-/* Navbar */
+/* Navbar Globais */
 
 a.navbar-brand img {
   margin-right: 10px;
@@ -16,6 +16,15 @@ a.nav-link {
 }
 a.nav-link:hover {
   color: #fff;
+}
+
+/* Navbar Top */
+.navbar-top {
+  background-color: #3772A6;
+}
+/* Navbar Bottom */
+.navbar-bottom {
+  background-color: #F2522E;
 }
 
 /* Estilos do Banner */
