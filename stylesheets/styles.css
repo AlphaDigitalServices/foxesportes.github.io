@@ -13,8 +13,8 @@ a.navbar-brand img {
 /* Estilos do Banner */
 .banner {
   height: 100vh;
-  background: url('https://foxesportes.netlify.app/images/logo3.png') no-repeat center center/cover;
-  animation: backgroundMove 10s infinite alternate;
+  background: url('https://foxesportes.netlify.app/images/logo.png') no-repeat center center/cover;
+  animation: backgroundMove 15s infinite alternate;
 }
 
 /* Animação do Banner */
@@ -28,7 +28,7 @@ a.navbar-brand img {
 }
 
 .animate {
-  animation: fadeIn 2s ease-in-out;
+  animation: fadeIn 4s ease-in-out;
 }
 
 @keyframes fadeIn {
