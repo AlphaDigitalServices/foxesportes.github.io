@@ -32,13 +32,13 @@ a.nav-link:hover {
   height: 100vh;
   background: url('https://foxesportes.netlify.app/images/logo3.png') no-repeat right;
   animation: backgroundMove;
-  animation-duration: 10s;
+  animation-duration: 5s;
 }
 
 /* Animação do Banner */
 @keyframes backgroundMove {
   from {
-    background-position: 0% 75%;
+    background-position: 0% 25%;
   }
   to {
     background-position: 100% 50%;
