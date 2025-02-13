@@ -3,7 +3,7 @@
 body {
   font-family: 'Arial', sans-serif;
   background-color: #0D1526;
-  color: #ffffff;
+  color: #fff;
 }
 
 a.navbar-brand img {
@@ -13,7 +13,7 @@ a.navbar-brand img {
 /* Estilos do Banner */
 .banner {
   height: 100vh;
-  background: url('images/logo3.png') no-repeat center center/cover;
+  background: url('https://foxesportes.netlify.app/images/logo3.png') no-repeat center center/cover;
   animation: backgroundMove 10s infinite alternate;
 }
 
@@ -44,8 +44,9 @@ a.navbar-brand img {
 .card {
   background-color: #F2522E;
   border: none;
-  color: #ffffff;
+  color: #fff;
 }
+
 .card:hover {
   transform: scale(1.05);
   transition: transform 0.3s ease-in-out;
