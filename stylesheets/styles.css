@@ -25,10 +25,10 @@ a.nav-link {
 /* Animação do Banner */
 @keyframes backgroundMove {
   from {
-    background-position: 100% 0;
+    background-position: 0% 50%;
   }
   to {
-    background-position: 100% 0%;
+    background-position: 100% 50%;
   }
 }
 
