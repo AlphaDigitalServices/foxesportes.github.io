@@ -6,11 +6,15 @@ body {
   color: #fff;
 }
 
+/* Navbar */
+
 a.navbar-brand img {
   margin-right: 10px;
 }
-
 a.nav-link {
+  color: #fff;
+}
+a.nav-link:hover {
   color: #fff;
 }
 
