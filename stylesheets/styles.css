@@ -17,7 +17,7 @@ a.nav-link {
 /* Estilos do Banner */
 .banner {
   height: 100vh;
-  background: url('https://foxesportes.netlify.app/images/logo3.png') no-repeat;
+  background: url('https://foxesportes.netlify.app/images/logo3.png') no-repeat right;
   animation: backgroundMove;
   animation-duration: 10s;
 }
