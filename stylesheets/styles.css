@@ -11,7 +11,10 @@ a.nav-link {
   color: #fff;
 }
 a.nav-link:hover {
-  color: #fff;
+  color: #F25244;
+}
+a.nav-link:active {
+  color: #F25244;
 }
 
 /* Navbar Top */
