@@ -20,11 +20,11 @@ a.nav-link:hover {
 
 /* Navbar Top */
 .navbar-top {
-  background-color: #3772A6;
+  background-color: #0D1526;
 }
 /* Navbar Bottom */
 .navbar-bottom {
-  background-color: #F2522E;
+  background-color: #F25244;
 }
 
 /* Estilos do Banner */
@@ -38,10 +38,10 @@ a.nav-link:hover {
 /* Animação do Banner */
 @keyframes backgroundMove {
   from {
-    background-position: 0% 50%;
+    background-position: 0% 75%;
   }
   to {
-    background-position: 75% 50%;
+    background-position: 100% 50%;
   }
 }
 
