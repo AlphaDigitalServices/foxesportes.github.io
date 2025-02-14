@@ -93,13 +93,19 @@
         card.classList.add("col");
         card.innerHTML = `
           <div class="card">
-			<img src="/images/logo2.png" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">${player.name}</h5>
-              <p class="card-text"><strong>Tag:</strong> ${player.tag}</p>
-              <p class="card-text"><strong>Cargo:</strong> ${player.role}</p>
-              <p class="card-text"><strong>Troféus:</strong> ${player.trophies}</p>
-            </div>
+			<div class="row g-0">
+			  <div class="col-4">
+				<img src="/images/logo2.png" class="card-img-top">
+			  </div>
+			  <div class="col-8">
+				<div class="card-body">
+				  <h5 class="card-title">${player.name}</h5>
+				  <p class="card-text"><strong>Tag:</strong> ${player.tag}</p>
+				  <p class="card-text"><strong>Cargo:</strong> ${player.role}</p>
+				  <p class="card-text"><strong>Troféus:</strong> ${player.trophies}</p>
+				</div>
+			  </div>
+			</div>
           </div>
         `;
           playersContainer.appendChild(card);
