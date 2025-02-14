@@ -99,12 +99,13 @@
 			  </div>
 			  <div class="col-8">
 				<div class="card-body">
-				  <h6 class="card-title">${player.name}</h6>
-				  <p class="card-text">
-				    <strong>Tag:</strong> ${player.tag}<br>
-					<strong>Cargo:</strong> ${player.role}<br>
-				    <strong>Troféus:</strong> ${player.trophies}
-				  </p>
+				  <a href="https://brawltime.ninja/pt/profile/${player.tag.slice(1)}" target="_blank">
+					<h6 class="card-title">${player.name}</h6>
+					<p class="card-text">
+					  <strong>Cargo:</strong> ${player.role}<br>
+					  <strong>Troféus:</strong> ${player.trophies}
+					</p>
+				  </a>
 				</div>
 			  </div>
 			</div>
