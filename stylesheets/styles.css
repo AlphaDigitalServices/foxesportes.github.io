@@ -37,7 +37,7 @@ a.nav-link:active {
   height: 100vh;
   background: url('https://foxesportes.netlify.app/images/logo3.png') no-repeat right;
   animation: backgroundMove;
-  animation-duration: 4s;
+  animation-duration: 2.5s;
 }
 
 /* Animação do Banner */
