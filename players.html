@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogadores Fox Esportes</title>
+    <link href="stylesheets/bootstrap/bootstrap.min.css" rel="stylesheet"/>
+    <link href="stylesheets/bootstrap/bootstrap-grid.min.css" rel="stylesheet"/>
+    <link href="stylesheets/bootstrap/bootstrap-reboot.min.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">Jogadores</h2>
+        <div class="row" id="players-container">
+            <!-- Os cards serão inseridos aqui via JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        fetch("https://foxesportes.netlify.app/.netlify/functions/players_fixo")
+            .then(response => response.json())
+            .then(data => {
+                const playersContainer = document.getElementById("players-container");
+                data.items.forEach(player => {
+                    const card = document.createElement("div");
+                    card.classList.add("col-md-4", "mb-3");
+                    card.innerHTML = `
+                        <div class="card shadow-sm border-0">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">${player.name}</h5>
+                                <p class="card-text"><strong>Tag:</strong> ${player.tag}</p>
+                                <p class="card-text"><strong>Cargo:</strong> ${player.role}</p>
+                                <p class="card-text"><strong>Troféus:</strong> ${player.trophies}</p>
+                            </div>
+                        </div>
+                    `;
+                    playersContainer.appendChild(card);
+                });
+            })
+            .catch(error => console.error("Erro ao carregar os dados: ", error));
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
