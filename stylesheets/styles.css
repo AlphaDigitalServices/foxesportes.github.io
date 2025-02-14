@@ -43,7 +43,7 @@ a.nav-link:active {
 /* Animação do Banner */
 @keyframes backgroundMove {
   from {
-    background-position: 65% 50%;
+    background-position: 75% 50%;
   }
   to {
     background-position: 100% 50%;
