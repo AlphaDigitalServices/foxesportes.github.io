@@ -44,8 +44,8 @@
 
   <!-- Seção Serviços -->
   <section id="jogadores" class="py-5 text-center bg-light">
-    <h2 class="text-center mb-4">Jogadores</h2>
-	  <div class="row" id="players-container">
+    <div class="container">
+	  <div class="row row-cols-1 row-cols-md-3 g-4" id="players-container">
 	  <!-- Os cards serão inseridos aqui via JavaScript -->
 	  </div>
     </div>
@@ -90,10 +90,11 @@
       const playersContainer = document.getElementById("players-container");
         data.items.forEach(player => {
         const card = document.createElement("div");
-        card.classList.add("col-md-4", "mb-3");
+        card.classList.add("col");
         card.innerHTML = `
-          <div class="card shadow-sm border-0">
-            <div class="card-body text-center">
+          <div class="card">
+			<img src="/images/logo2.png" class="card-img-top">
+            <div class="card-body">
               <h5 class="card-title">${player.name}</h5>
               <p class="card-text"><strong>Tag:</strong> ${player.tag}</p>
               <p class="card-text"><strong>Cargo:</strong> ${player.role}</p>
