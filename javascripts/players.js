@@ -4,6 +4,7 @@ async function fetchPlayers() {
 
     try {
         const response = await fetch(apiUrl, {
+            method: "GET",
             headers: {
                 "Authorization": `Bearer ${token}`,
                 "Accept": "application/json"
