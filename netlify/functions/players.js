@@ -1,4 +1,8 @@
-const axios = require("axios");
+exports.handler = async function (event, context) {
+    return {
+exports.handler = async function (event, context) {
+    return {
+		const axios = require("axios");
 
 class BrawlStarsAPI {
   constructor(apiKey) {
@@ -38,3 +42,8 @@ exports.handler = async function (event) {
     body: JSON.stringify(members),
   };
 };
+
+    };
+  };
+    };
+  };
