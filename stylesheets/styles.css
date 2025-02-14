@@ -67,11 +67,11 @@ a.nav-link:active {
 	display: flex;
 	flex-direction: column;
 	align-items: start;
-	gap: 2em;
+	gap: 0.5em;
 }
 
 .text-container span {
-	font-size: 4.75rem;
+	font-size: 5rem;
 	font-weight: bold;
 	text-transform: uppercase;
 }
