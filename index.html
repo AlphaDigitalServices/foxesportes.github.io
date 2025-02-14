@@ -21,7 +21,7 @@
 		<a class="nav-link" href="#sobre">Sobre</a>
 	  </li>
 	  <li class="nav-item">
-		<a class="nav-link" href="#servicos">Serviços</a>
+		<a class="nav-link" href="#jogadores">Jogadores</a>
 	  </li>
 	  <li class="nav-item">
 		<a class="nav-link" href="#contato">Contato</a>
@@ -43,35 +43,11 @@
   </section>
 
   <!-- Seção Serviços -->
-  <section id="servicos" class="py-5 text-center bg-light">
-    <div class="container">
-      <h2 class="mb-4">Nossos Serviços</h2>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Design Gráfico</h5>
-              <p class="card-text">Criamos designs visuais impressionantes que captam a essência da sua marca.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Desenvolvimento Web</h5>
-              <p class="card-text">Sites rápidos, seguros e com as melhores práticas de UX/UI.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Marketing Digital</h5>
-              <p class="card-text">Aumente sua visibilidade e melhore seu posicionamento com estratégias de SEO.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+  <section id="jogadores" class="py-5 text-center bg-light">
+    <h2 class="text-center mb-4">Jogadores</h2>
+	  <div class="row" id="players-container">
+	  <!-- Os cards serão inseridos aqui via JavaScript -->
+	  </div>
     </div>
   </section>
 
@@ -104,13 +80,32 @@
   </section>
 
   <!-- Scripts Bootstrap e JavaScript -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-  <script src="scripts.js"></script>
-  
+  <script src="javasripts/boostrap/bootstrap.bundle.min.js"></script>
+  <script src="javascripts/scripts.js"></script>
+
   <script>
-	const players = new Array("K", "L", "B");
-	document.getElementById("nomeJogador").innerHTML = players;
-  </script>
+    fetch("https://foxesportes.netlify.app/.netlify/functions/players_fixo")
+      .then(response => response.json())
+      .then(data => {
+      const playersContainer = document.getElementById("players-container");
+        data.items.forEach(player => {
+        const card = document.createElement("div");
+        card.classList.add("col-md-4", "mb-3");
+        card.innerHTML = `
+          <div class="card shadow-sm border-0">
+            <div class="card-body text-center">
+              <h5 class="card-title">${player.name}</h5>
+              <p class="card-text"><strong>Tag:</strong> ${player.tag}</p>
+              <p class="card-text"><strong>Cargo:</strong> ${player.role}</p>
+              <p class="card-text"><strong>Troféus:</strong> ${player.trophies}</p>
+            </div>
+          </div>
+        `;
+          playersContainer.appendChild(card);
+        });
+    })
+    .catch(error => console.error("Erro ao carregar os dados: ", error));
+</script>
   
 </body>
 </html>
