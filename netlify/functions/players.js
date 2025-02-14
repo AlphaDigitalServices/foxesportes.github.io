@@ -8,7 +8,7 @@ class BrawlStarsAPI {
 
   async getClubMembers(clubTag) {
     try {
-      const encodedTag = encodeURIComponent(clubTag); // Converte o '#' para URL-safe
+      const encodedTag = encodeURIComponent(clubTag);
       const response = await axios.get(`${this.baseUrl}/clubs/${encodedTag}/members`, {
         headers: {
           Authorization: `Bearer ${this.apiKey}`,
@@ -26,12 +26,15 @@ class BrawlStarsAPI {
   }
 }
 
-// **Exemplo de uso**
-const apiKey = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjljNDg3OGJkLTBiZTYtNDk5NC05ZDlkLTc0NjdlZjQyOTIzZSIsImlhdCI6MTczOTUzODc1OSwic3ViIjoiZGV2ZWxvcGVyLzM1YjYwZjAwLTgxNzItZTZmMi0wNDgwLTNkMmU3NWIyMjA4ZiIsInNjb3BlcyI6WyJicmF3bHN0YXJzIl0sImxpbWl0cyI6W3sidGllciI6ImRldmVsb3Blci9zaWx2ZXIiLCJ0eXBlIjoidGhyb3R0bGluZyJ9LHsiY2lkcnMiOlsiMzQuMjM0LjEwNi44MCIsIjEwMC4yOC4yMDEuMTU1IiwiMTcwLjIzMy4yMjkuNTUiLCIyMDEuNDguNDkuOTkiXSwidHlwZSI6ImNsaWVudCJ9XX0.4emqXgVEmyVVesYU4xVvE6KYsf15oebY1unsRz99358XHWJGvG8NiP16CHp1icDqYjr3ehPC3wEcd7j7oaJ2vg";
-const clubTag = "#2V2JQR82Y";
+exports.handler = async function (event) {
+  const apiKey = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjljNDg3OGJkLTBiZTYtNDk5NC05ZDlkLTc0NjdlZjQyOTIzZSIsImlhdCI6MTczOTUzODc1OSwic3ViIjoiZGV2ZWxvcGVyLzM1YjYwZjAwLTgxNzItZTZmMi0wNDgwLTNkMmU3NWIyMjA4ZiIsInNjb3BlcyI6WyJicmF3bHN0YXJzIl0sImxpbWl0cyI6W3sidGllciI6ImRldmVsb3Blci9zaWx2ZXIiLCJ0eXBlIjoidGhyb3R0bGluZyJ9LHsiY2lkcnMiOlsiMzQuMjM0LjEwNi44MCIsIjEwMC4yOC4yMDEuMTU1IiwiMTcwLjIzMy4yMjkuNTUiLCIyMDEuNDguNDkuOTkiXSwidHlwZSI6ImNsaWVudCJ9XX0.4emqXgVEmyVVesYU4xVvE6KYsf15oebY1unsRz99358XHWJGvG8NiP16CHp1icDqYjr3ehPC3wEcd7j7oaJ2vg";
+  const clubTag = event.queryStringParameters?.clubTag || "#2V2JQR82Y";
 
-const api = new BrawlStarsAPI(apiKey);
+  const api = new BrawlStarsAPI(apiKey);
+  const members = await api.getClubMembers(clubTag);
 
-api.getClubMembers(clubTag)
-  .then((members) => console.log(members))
-  .catch((error) => console.error(error));
+  return {
+    statusCode: members.error ? members.error : 200,
+    body: JSON.stringify(members),
+  };
+};
