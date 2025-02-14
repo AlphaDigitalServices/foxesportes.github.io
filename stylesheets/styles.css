@@ -16,9 +16,6 @@ a.nav-link:hover {
 a.nav-link:active {
   color: #F25244;
 }
-a.nav-link:link {
-  color: #F25244;
-}
 a.nav-link:active {
   font-weight: bold;
 }
