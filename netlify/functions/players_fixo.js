@@ -4,7 +4,7 @@ const path = require('path');
 exports.handler = async (event, context) => {
   try {
     // Caminho do diretório onde os arquivos JSON estão localizados dentro do Lambda
-    const directoryPath = path.join(__dirname, './javascripts/jsons');
+    const directoryPath = path.join(__dirname, '../javascripts/jsons');
 
     // Regex para encontrar o arquivo correspondente
     const regex = /response_\d+\.json$/;
